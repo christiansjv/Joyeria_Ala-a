@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyería Dental Alaïa | Brilla con cada sonrisa</title>
+    
+    <!-- Google Fonts: contemporary editorial luxury -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for elegant scalable vector icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37', // Classic gold
+                            light: '#F3E5AB',   // Lighter gold
+                            dark: '#AA8822',    // Darker gold for hover states
+                        },
+                        dark: {
+                            DEFAULT: '#0a0a0a', // Almost black
+                            card: '#141414',    // Slightly lighter for depth
+                            border: '#2a2a2a'   // Subtle border in dark mode
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific aesthetic tweaks -->
+    <style>
+        /* Minimalist scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37; 
+        }
+
+        /* Gold text gradient utility */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #F3E5AB, #D4AF37, #AA8822);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            padding-right: 0.12em;
+        }
+        
+        /* Subtle gold glow for focused inputs */
+        .input-glow:focus {
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+            border-color: #D4AF37;
+        }
+
+        /* Let the jewel itself lead every catalog card. */
+        #disenos .group > div:first-child {
+            aspect-ratio: 1 / 1.08;
+        }
+
+        #disenos .group > div:nth-child(2) {
+            height: auto;
+            min-height: 0;
+            padding: 0.8rem 1rem;
+        }
+
+        #disenos .group > div:nth-child(2) p {
+            margin-top: 0.3rem;
+        }
+
+        /* A shared finish keeps the catalog visually cohesive across shoots. */
+        #disenos .group img {
+            filter: brightness(1.02) contrast(1.03) saturate(0.94) sepia(0.035);
+        }
+
+        .diamond-sparkle {
+            position: absolute;
+            color: #f3e5ab;
+            font-family: Arial, sans-serif;
+            line-height: 1;
+            text-shadow: 0 0 18px rgba(212, 175, 55, 0.72);
+            opacity: 0.7;
+            animation: shimmer 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .diamond-sparkle:nth-child(2) { animation-delay: -1.4s; }
+        .diamond-sparkle:nth-child(3) { animation-delay: -2.6s; }
+
+        @keyframes shimmer {
+            0%, 100% { transform: scale(0.72) rotate(0deg); opacity: 0.22; }
+            50% { transform: scale(1.1) rotate(18deg); opacity: 0.82; }
+        }
+
+        .hero-warmth {
+            background: radial-gradient(ellipse 48% 70% at 76% 52%, rgba(91, 60, 30, 0.72) 0%, rgba(42, 27, 16, 0.42) 46%, transparent 76%);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased selection:bg-gold selection:text-black relative">
+
+    <header class="fixed w-full top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-dark-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center" aria-label="Joyería Dental Alaïa, inicio">
+                <img src="./logo jda.jpg" alt="Joyería Dental Alaïa" class="w-16 h-16 object-contain">
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-8">
+                <a href="#inicio" class="text-sm font-medium hover:text-gold transition-colors">Inicio</a>
+                <a href="#disenos" class="text-sm font-medium hover:text-gold transition-colors">Diseños</a>
+                <a href="#nosotros" class="text-sm font-medium hover:text-gold transition-colors">Sobre Alaïa</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="https://api.whatsapp.com/message/ZJ4CYM5NDDEOH1?autoload=1&amp;app_absent=0&amp;utm_source=ig" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 border border-gold text-gold px-6 py-3 rounded-full text-base font-semibold hover:bg-gold hover:text-black transition-all duration-300">
+                <i class="ph ph-whatsapp-logo text-xl"></i> Agenda tu hora aquí
+            </a>
+
+            <!-- Mobile Menu Button (simplified for landing page) -->
+            <a href="https://api.whatsapp.com/message/ZJ4CYM5NDDEOH1?autoload=1&amp;app_absent=0&amp;utm_source=ig" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" class="md:hidden text-gold text-2xl">
+                <i class="ph ph-whatsapp-logo"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex items-center justify-center min-h-[90vh] overflow-hidden">
+            <!-- Background element (abstract glow) -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div aria-hidden="true" class="hero-warmth absolute inset-0 pointer-events-none"></div>
+            <div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
+                <span class="diamond-sparkle text-4xl sm:text-5xl top-[20%] left-[17%]">✦</span>
+                <span class="diamond-sparkle text-xl sm:text-3xl top-[32%] right-[18%]">✧</span>
+                <span class="diamond-sparkle text-3xl sm:text-4xl bottom-[24%] right-[27%]">✦</span>
+            </div>
+            
+            <div class="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.05fr_.95fr] gap-10 lg:gap-16 items-center">
+                <div class="text-center lg:text-left">
+                <h2 class="text-gold tracking-[0.2em] uppercase text-xs sm:text-sm font-semibold mb-4">Joyería Dental Exclusiva</h2>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-serif font-semibold tracking-tight text-white leading-[1.05] mb-6">
+                    Ilumina tu sonrisa con <br>
+                    <span class="text-gradient-gold italic">detalles únicos</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl lg:mx-0 mx-auto font-light leading-relaxed">
+                    Instalación profesional de cristales y oro de la más alta calidad. Un toque sutil que transforma tu expresión con elegancia.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="https://api.whatsapp.com/message/ZJ4CYM5NDDEOH1?autoload=1&amp;app_absent=0&amp;utm_source=ig" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-gold text-black rounded-full font-medium text-lg hover:bg-gold-light hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                        <i class="ph ph-whatsapp-logo mr-2"></i> Agenda tu hora aquí
+                    </a>
+                    <a href="#disenos" class="w-full sm:w-auto px-8 py-4 border border-dark-border text-white rounded-full font-medium text-lg hover:border-gold hover:text-gold transition-all duration-300">
+                        Ver diseños
+                    </a>
+                </div>
+                </div>
+                <div class="relative mx-auto w-full max-w-md lg:max-w-none overflow-hidden">
+                    <div class="absolute inset-6 bg-gold/20 blur-3xl rounded-full"></div>
+                    <img src="./modelo/zaida-hero-v2.png" alt="Zaida, fundadora de Joyería Dental Alaïa" class="relative w-full max-h-[620px] object-cover object-top">
+                    <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-transparent"></div>
+                    <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-dark to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="disenos" class="py-24 bg-dark-card/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif text-white font-bold mb-4">Colección Alaïa</h2>
+                    <p class="text-gray-400 max-w-xl mx-auto">Conoce nuestros diseños exclusivos. Haz clic en cualquiera para ver más detalles. Valores sujetos a evaluación.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+                    <!-- Diseño 1: Aletas -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Aletas', '$35.000', 'Un diseño audaz y moderno que aporta carácter y un brillo inconfundible a los laterales de tu sonrisa.', './Aletas.png', 'Aletas')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Aletas.png" alt="Diseño Aletas" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Aletas';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Aletas</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$35.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 11: Full Set Navy -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Full Set Navy', '$130.000', 'Nuestra creación más exclusiva. Un diseño integral que viste tu sonrisa con lujo y destellos excepcionales.', './Full Set Navy.png', 'Full Set Navy')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Full Set Navy.png" alt="Diseño Full Set Navy" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Full+Set+Navy';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Full Set Navy</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$130.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 14: Mariposa -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Mariposa', '$50.000', 'Libertad y transformación. Una composición compleja que atrapa la luz desde todos los ángulos.', './Mariposa.png', 'Mariposa')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Mariposa.png" alt="Diseño Mariposa" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Mariposa';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Mariposa</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$50.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 15: Mariposa Simple -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Mariposa Simple', '$41.000', 'Sutileza en vuelo. Una versión minimalista de nuestro diseño Mariposa para un look ligero.', './Mariposa Simple.png', 'Mariposa Simple')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Mariposa Simple.png" alt="Diseño Mariposa Simple" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Mariposa+Simple';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Mariposa Simple</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$41.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 19: Set Noe -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Set Noe', '$40.500', 'Personalidad vibrante. Una combinación única de piezas diseñadas para no pasar desapercibida.', './Set Noe-v2.png', 'Set Noe')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Set Noe-v2.png" alt="Diseño Set Noe" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Set+Noe';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Set Noe</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$40.500</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 20: Set Thays -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Set Thays', '$25.000', 'Delicadeza vertical. Cristales alineados con precisión para un look estilizado y pulcro.', './Set Thays-v2.png', 'Set Thays')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Set Thays-v2.png" alt="Diseño Set Thays" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Set+Thays';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Set Thays</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$25.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 21: Set Xina -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Set Xina', '$60.000', 'Fuerza y elegancia. Un diseño audaz que combina múltiples cristales para un impacto visual superior.', './Set Xina.png', 'Set Xina')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Set Xina.png" alt="Diseño Set Xina" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Set+Xina';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Set Xina</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$60.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 22: Sofyy -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Sofyy', '$30.000', 'Luz simétrica. Dos destellos laterales que enmarcan y realzan el blanco natural de tus dientes.', './Sofyy.png', 'Sofyy')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Sofyy.png" alt="Diseño Sofyy" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Sofyy';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Sofyy</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$30.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 23: Sugar Tooth -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Sugar Tooth', '$65.000', 'El brillo definitivo. Un diente completamente cubierto de microcristales para un efecto deslumbrante.', './Sugar Tooth-v2.png', 'Sugar Tooth')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Sugar Tooth-v2.png" alt="Diseño Sugar Tooth" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Sugar+Tooth';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Sugar Tooth</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$65.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 24: Tapé -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Tapé', '$25.000', 'Tres puntos de luz en perfecta armonía. Un detalle refinado, sutil, pero innegablemente lujoso.', './Tapé-v2.png', 'Tapé')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Tapé-v2.png" alt="Diseño Tapé" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Tapé';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Tapé</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$25.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 25: Vick -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Vick', '$30.000', 'Originalidad asimétrica. Un diseño contemporáneo pensado para sonrisas con personalidad.', './Vick.png', 'Vick')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Vick.png" alt="Diseño Vick" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Vick';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Vick</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$30.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg">
+                                <i class="ph ph-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 26: Corazón -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Corazón', '$25.000', 'Un destello romántico y sutil: el detalle perfecto para darle intención y luz a tu sonrisa.', './Corazon.png', 'Corazón')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Corazon.png" alt="Diseño Corazón" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Corazon';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Corazón</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$25.000</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg"><i class="ph ph-plus text-sm"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Diseño 27: Corazón Dorado -->
+                    <div class="group border border-dark-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-300 flex flex-col bg-dark-card/50 cursor-pointer relative" onclick="openModal('Corazón Dorado', '$40.500', 'Un corazón con presencia dorada para una sonrisa que se siente personal, delicada y memorable.', './Corazon Dorado-v2.png', 'Corazón Dorado')">
+                        <div class="aspect-[4/3] flex items-center justify-center bg-dark relative overflow-hidden">
+                            <img src="./Corazon Dorado-v2.png" alt="Diseño Corazón Dorado" onerror="this.onerror=null; this.src='https://placehold.co/400x300/141414/D4AF37?text=Corazon+Dorado';" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4 border-t border-dark-border flex flex-col justify-between h-full">
+                            <h3 class="text-sm md:text-base font-serif text-white group-hover:text-gold transition-colors leading-tight">Corazón Dorado</h3>
+                            <p class="text-xs md:text-sm text-gold mt-2 font-medium">$40.500</p>
+                            <div class="absolute bottom-4 right-4 w-7 h-7 rounded-full bg-dark border border-dark-border flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-colors text-gray-500 group-hover:text-black shadow-lg"><i class="ph ph-plus text-sm"></i></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="py-24 border-y border-dark-border relative overflow-hidden">
+             <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                 <div>
+                     <i class="ph ph-sparkle text-gold text-4xl mb-4"></i>
+                     <h2 class="text-3xl md:text-4xl font-serif text-white font-bold mb-6">El Arte detrás de Alaïa</h2>
+                     <p class="text-gray-300 mb-4 leading-relaxed">
+                         En Joyería Dental Alaïa, creemos que tu sonrisa es tu mejor carta de presentación. Nos especializamos en la instalación segura y estética de gemas y joyas dentales.
+                     </p>
+                     <p class="text-gray-400 leading-relaxed">
+                         Nuestro proceso es completamente indoloro, sin perforaciones y no daña el esmalte de tus dientes. Utilizamos resinas y adhesivos de calidad odontológica para garantizar la salud de tu boca mientras luces espectacular.
+                     </p>
+                 </div>
+                 <div class="grid grid-cols-2 gap-4">
+                     <div class="bg-dark-card p-6 rounded-2xl border border-dark-border text-center">
+                         <h4 class="text-gold font-serif text-2xl font-bold mb-1">100%</h4>
+                         <p class="text-sm text-gray-400">Seguro e Indoloro</p>
+                     </div>
+                     <div class="bg-dark-card p-6 rounded-2xl border border-dark-border text-center">
+                         <h4 class="text-gold font-serif text-2xl font-bold mb-1">18k</h4>
+                         <p class="text-sm text-gray-400">Oro Genuino</p>
+                     </div>
+                     <div class="bg-dark-card p-6 rounded-2xl border border-dark-border text-center col-span-2">
+                         <h4 class="text-gold font-serif text-2xl font-bold mb-1">Top</h4>
+                         <p class="text-sm text-gray-400">Material Odontológico de Primera</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <section id="agendar" class="hidden py-24 relative">
+            <div class="max-w-3xl mx-auto px-6">
+                <div class="bg-dark-card border border-dark-border rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                    <!-- Decorational border top -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50"></div>
+                    
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-serif text-white font-bold mb-3">Reserva tu Sesión</h2>
+                        <p class="text-gray-400">Déjanos tus datos y nos pondremos en contacto para confirmar tu hora de instalación.</p>
+                    </div>
+
+                    <form id="booking-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="space-y-2">
+                                <label for="name" class="block text-sm text-gray-400">Nombre Completo</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="ph ph-user text-gray-500"></i>
+                                    </div>
+                                    <input type="text" id="name" name="name" required class="w-full bg-dark border border-dark-border text-white rounded-xl pl-10 pr-4 py-3 outline-none input-glow transition-all" placeholder="Ej. Camila Rojas">
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="space-y-2">
+                                <label for="phone" class="block text-sm text-gray-400">Teléfono (WhatsApp)</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="ph ph-phone text-gray-500"></i>
+                                    </div>
+                                    <input type="tel" id="phone" name="phone" required class="w-full bg-dark border border-dark-border text-white rounded-xl pl-10 pr-4 py-3 outline-none input-glow transition-all" placeholder="+56 9 1234 5678">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="space-y-2">
+                            <label for="email" class="block text-sm text-gray-400">Correo Electrónico</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="ph ph-envelope text-gray-500"></i>
+                                </div>
+                                <input type="email" id="email" name="email" required class="w-full bg-dark border border-dark-border text-white rounded-xl pl-10 pr-4 py-3 outline-none input-glow transition-all" placeholder="tu@correo.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Date Preference -->
+                            <div class="space-y-2">
+                                <label for="date" class="block text-sm text-gray-400">Fecha ideal tentativa</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="ph ph-calendar text-gray-500"></i>
+                                    </div>
+                                    <input type="date" id="date" name="date" required class="w-full bg-dark border border-dark-border text-white rounded-xl pl-10 pr-4 py-3 outline-none input-glow transition-all [color-scheme:dark]">
+                                </div>
+                            </div>
+
+                            <!-- Design Selection -->
+                            <div class="space-y-2">
+                                <label for="design" class="block text-sm text-gray-400">Diseño de interés</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="ph ph-diamond text-gray-500"></i>
+                                    </div>
+                                    <select id="design" name="design" required class="w-full bg-dark border border-dark-border text-white rounded-xl pl-10 pr-4 py-3 outline-none input-glow transition-all appearance-none">
+                                        <option value="" disabled selected>Selecciona un diseño</option>
+                                        <option value="Aletas">Aletas ($35.000)</option>
+                                        <option value="Amor">Amor ($25.000)</option>
+                                        <option value="Cata">Cata ($34.999)</option>
+                                        <option value="Corazón">Corazón ($25.000)</option>
+                                        <option value="Corazón Dorado">Corazón Dorado ($40.500)</option>
+                                        <option value="Cristal Simple">Cristal Simple ($15.000)</option>
+                                        <option value="Cruz">Cruz ($45.000)</option>
+                                        <option value="Cruz Plateada">Cruz Plateada ($45.000)</option>
+                                        <option value="Dagas Full Set">Dagas Full Set ($140.000)</option>
+                                        <option value="Ferr">Ferr ($40.000)</option>
+                                        <option value="Full Set Navy">Full Set Navy ($130.000)</option>
+                                        <option value="Galáctica">Galáctica ($70.000)</option>
+                                        <option value="Lefleur">Lefleur ($90.000)</option>
+                                        <option value="Mariposa">Mariposa ($50.000)</option>
+                                        <option value="Mariposa Simple">Mariposa Simple ($41.000)</option>
+                                        <option value="Océan">Océan ($35.000)</option>
+                                        <option value="Redondos">Redondos ($15.000)</option>
+                                        <option value="Sammy">Sammy ($30.000)</option>
+                                        <option value="Set Noe">Set Noe ($40.500)</option>
+                                        <option value="Set Thays">Set Thays ($25.000)</option>
+                                        <option value="Set Xina">Set Xina ($60.000)</option>
+                                        <option value="Sofyy">Sofyy ($30.000)</option>
+                                        <option value="Sugar Tooth">Sugar Tooth ($65.000)</option>
+                                        <option value="Tapé">Tapé ($25.000)</option>
+                                        <option value="Vick">Vick ($30.000)</option>
+                                        <option value="Asesoría">No estoy segura, quiero asesoría en el local</option>
+                                    </select>
+                                    <!-- Custom dropdown arrow -->
+                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                        <i class="ph ph-caret-down text-gray-500"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Extra notes -->
+                        <div class="space-y-2">
+                            <label for="notes" class="block text-sm text-gray-400">Comentarios adicionales (Opcional)</label>
+                            <textarea id="notes" name="notes" rows="3" class="w-full bg-dark border border-dark-border text-white rounded-xl p-4 outline-none input-glow transition-all resize-none" placeholder="Cuéntanos si tienes alguna duda en particular..."></textarea>
+                        </div>
+
+                        <!-- Status Message Container -->
+                        <div id="form-message" class="hidden rounded-xl p-4 text-sm font-medium text-center"></div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-btn" class="w-full py-4 bg-gold text-black font-semibold rounded-xl hover:bg-gold-light transition-colors flex justify-center items-center gap-2 group">
+                            <span>Solicitar Cita</span>
+                            <i class="ph ph-paper-plane-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Design Modal (Hidden by default) -->
+    <div id="design-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative bg-dark-card border border-dark-border rounded-2xl w-[90%] max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col md:flex-row transform transition-all scale-95 opacity-0 duration-300" id="modal-panel">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-dark border border-dark-border text-gray-400 hover:text-gold hover:border-gold z-10 transition-colors">
+                <i class="ph ph-x text-lg"></i>
+            </button>
+            
+            <!-- Image Section -->
+            <div class="w-full md:w-1/2 bg-dark flex items-center justify-center aspect-square md:aspect-auto border-b md:border-b-0 md:border-r border-dark-border relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-gold/5 to-transparent pointer-events-none"></div>
+                <img id="modal-img" src="" alt="Diseño" class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Details Section -->
+            <div class="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                <h2 id="modal-title" class="text-3xl md:text-4xl font-serif font-bold text-white mb-2 tracking-wide">Titulo</h2>
+                <p id="modal-price" class="text-xl md:text-2xl text-gold mb-6 font-medium">Precio</p>
+                
+                <div class="w-12 h-1 bg-gold mb-6 rounded-full"></div>
+                
+                <p id="modal-desc" class="text-gray-400 mb-8 leading-relaxed font-light text-sm md:text-base">Descripción</p>
+                
+                <button onclick="selectDesignAndBook()" class="w-full py-4 bg-gold text-black font-semibold rounded-xl hover:bg-gold-light hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-2 group shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                    <span>Consultar por WhatsApp</span>
+                    <i class="ph ph-whatsapp-logo text-xl group-hover:scale-110 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark border-t border-dark-border pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <a href="#" class="flex items-center justify-center mb-6" aria-label="Joyería Dental Alaïa, inicio">
+                <img src="./logo jda.jpg" alt="Joyería Dental Alaïa" class="w-36 h-36 object-contain">
+            </a>
+            <p class="text-gray-400 mb-8">Especialistas en Joyería Dental.</p>
+            
+            <div class="flex justify-center gap-6 mb-12">
+                <!-- Social links (Replace with actual links) -->
+                <a href="https://www.instagram.com/joyeriadental.alaia/" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Alaïa en Instagram" class="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-colors">
+                    <i class="ph ph-instagram-logo text-xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@joyeriadental.alaia" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Alaïa en TikTok" class="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-colors">
+                    <i class="ph ph-tiktok-logo text-xl"></i>
+                </a>
+                <a href="https://api.whatsapp.com/message/ZJ4CYM5NDDEOH1?autoload=1&amp;app_absent=0&amp;utm_source=ig" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" class="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-colors">
+                    <i class="ph ph-whatsapp-logo text-xl"></i>
+                </a>
+            </div>
+
+            <div class="text-gray-600 text-sm">
+                &copy; <span id="current-year"></span> Joyería Dental Alaïa. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Show the most elaborate pieces first, ordered from highest to lowest price.
+        const catalog = document.querySelector('#disenos .grid');
+        if (catalog) {
+            [...catalog.children]
+                .sort((a, b) => {
+                    const price = (card) => Number((card.querySelector('p.text-gold')?.textContent || '0').replace(/[^0-9]/g, ''));
+                    return price(b) - price(a);
+                })
+                .forEach((card) => catalog.appendChild(card));
+        }
+
+        // -----------------------------------------
+        // MODAL LOGIC
+        // -----------------------------------------
+        const modal = document.getElementById('design-modal');
+        const modalPanel = document.getElementById('modal-panel');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalPrice = document.getElementById('modal-price');
+        const modalDesc = document.getElementById('modal-desc');
+        let currentDesignValue = '';
+
+        function openModal(title, price, desc, imgSrc, designValue) {
+            // Rellenar datos
+            modalTitle.textContent = title;
+            modalPrice.textContent = price;
+            modalDesc.textContent = desc;
+            modalImg.src = imgSrc;
+            currentDesignValue = designValue;
+            
+            // Si la imagen falla en cargar (como pasa en el preview del chat), muestra el cuadro gris
+            modalImg.onerror = function() {
+                this.onerror = null;
+                // Encodeamos el titulo para que los espacios y acentos no rompan la URL del placeholder
+                this.src = `https://placehold.co/600x600/141414/D4AF37?text=${encodeURIComponent(title)}`;
+            };
+
+            // Mostrar el modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Pequeño retraso para que la animación de escala y opacidad funcione
+            setTimeout(() => {
+                modalPanel.classList.remove('scale-95', 'opacity-0');
+                modalPanel.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            // Prevenir scroll en la pagina principal
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            // Ocultar con animación
+            modalPanel.classList.remove('scale-100', 'opacity-100');
+            modalPanel.classList.add('scale-95', 'opacity-0');
+            
+            // Esperar a que termine la animación para ocultar el div por completo
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto'; // Restaurar scroll
+            }, 300);
+        }
+
+        function selectDesignAndBook() {
+            closeModal();
+            window.open('https://api.whatsapp.com/message/ZJ4CYM5NDDEOH1?autoload=1&app_absent=0&utm_source=ig', '_blank', 'noopener,noreferrer');
+        }
+    </script>
+</body>
+</html>
