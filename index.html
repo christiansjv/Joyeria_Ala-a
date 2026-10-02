@@ -116,6 +116,32 @@
         .hero-warmth {
             background: radial-gradient(ellipse 48% 70% at 76% 52%, rgba(91, 60, 30, 0.72) 0%, rgba(42, 27, 16, 0.42) 46%, transparent 76%);
         }
+
+        .testimonials-viewport {
+            mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+        }
+
+        .testimonials-track {
+            width: max-content;
+            will-change: transform;
+            animation: testimonials-scroll 32s linear infinite;
+        }
+
+        .testimonials-viewport:hover .testimonials-track,
+        .testimonials-viewport:focus-within .testimonials-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes testimonials-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .testimonials-viewport { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
+            .testimonials-track { animation: testimonials-scroll 40s linear infinite; }
+        }
     </style>
 </head>
 <body class="bg-dark text-gray-300 font-sans antialiased selection:bg-gold selection:text-black relative">
@@ -176,8 +202,14 @@
                     </a>
                 </div>
                 </div>
-                <div class="relative mx-auto w-full max-w-md lg:max-w-none overflow-hidden">
+                <div class="relative mx-auto w-full max-w-md lg:max-w-none">
                     <div class="absolute inset-6 bg-gold/20 blur-3xl rounded-full"></div>
+                    <div class="relative z-10 inline-block mb-4 border border-gold/50 bg-dark-card px-4 py-3 text-left">
+                        <p class="text-gold text-[0.68rem] uppercase tracking-[0.18em] font-semibold">Tu sonrisa, en manos profesionales</p>
+                        <p class="text-white text-sm font-semibold mt-1">Zaida San Juan</p>
+                        <p class="text-gray-300 text-xs mt-0.5">Técnico Superior en Odontología</p>
+                        <p class="text-gray-400 text-xs mt-1">Más de 8 años de experiencia clínica</p>
+                    </div>
                     <img src="./modelo/zaida-hero-v2.png" alt="Zaida, fundadora de Joyería Dental Alaïa" class="relative w-full max-h-[620px] object-cover object-top">
                     <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-transparent"></div>
                     <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-dark to-transparent"></div>
@@ -371,6 +403,74 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="py-24 border-y border-dark-border relative overflow-hidden">
+            <div aria-hidden="true" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[260px] bg-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+            <div class="relative max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <p class="text-gold tracking-[0.2em] uppercase text-xs font-semibold mb-4">Feedback real</p>
+                    <h2 class="text-3xl md:text-4xl font-serif text-white font-bold mb-4">Experiencias que iluminan sonrisas</h2>
+                    <p class="text-gray-400">Palabras compartidas por clientes de Alaïa en Instagram.</p>
+                </div>
+
+                <div class="testimonials-viewport overflow-hidden py-2" tabindex="0" aria-label="Testimonios de clientes. Pasa el cursor o enfoca la sección para detener el movimiento.">
+                    <div class="testimonials-track flex gap-5 pr-5">
+                        <div class="flex gap-5">
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Me encantó como quedaron mis dientes. Súper rápido todo, paciente y profesional. Amé.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@belgicaavasquez <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Me encantó cómo quedó. Increíble atención, gracias por explicar cada paso. Sí o sí vuelvo.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@laratadomestica <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Excelente servicio. Amo.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@_.mtello._ <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Amé el resultado y la atención. Muy buen trato y de confianza.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@soofijj <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Absolutamente confiable y profesional, procedimiento rápido y resultado impecable.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@xina_lefleur <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Espectacular el servicio, el lugar y la forma de tratar a los clientes. Cristales de la mejor calidad.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@christiansjv <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Te diste el tiempo de mostrarme cómo se veía lo que quería y entre ambas decidimos lo más bello según mis dientes.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@jajajaviera <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“Llevo tres meses con mis cristales y aún están intactos. Excelente trabajo, confiable y con todas las medidas de higiene.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@thays_tiare <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]">
+                                <p class="text-gray-200 leading-relaxed text-sm">“La mejor experiencia: llevo dos meses con mis cristales y aún siguen intactos. Servicio recomendable.”</p>
+                                <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="mt-6 text-gold text-sm font-semibold hover:text-gold-light transition-colors">@ksj.catalina <i class="ph ph-instagram-logo ml-1"></i></a>
+                            </article>
+                        </div>
+                        <div class="flex gap-5" aria-hidden="true">
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Me encantó como quedaron mis dientes. Súper rápido todo, paciente y profesional. Amé.”</p><p class="mt-6 text-gold text-sm font-semibold">@belgicaavasquez</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Me encantó cómo quedó. Increíble atención, gracias por explicar cada paso. Sí o sí vuelvo.”</p><p class="mt-6 text-gold text-sm font-semibold">@laratadomestica</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Excelente servicio. Amo.”</p><p class="mt-6 text-gold text-sm font-semibold">@_.mtello._</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Amé el resultado y la atención. Muy buen trato y de confianza.”</p><p class="mt-6 text-gold text-sm font-semibold">@soofijj</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Absolutamente confiable y profesional, procedimiento rápido y resultado impecable.”</p><p class="mt-6 text-gold text-sm font-semibold">@xina_lefleur</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Espectacular el servicio, el lugar y la forma de tratar a los clientes. Cristales de la mejor calidad.”</p><p class="mt-6 text-gold text-sm font-semibold">@christiansjv</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Te diste el tiempo de mostrarme cómo se veía lo que quería y entre ambas decidimos lo más bello según mis dientes.”</p><p class="mt-6 text-gold text-sm font-semibold">@jajajaviera</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“Llevo tres meses con mis cristales y aún están intactos. Excelente trabajo, confiable y con todas las medidas de higiene.”</p><p class="mt-6 text-gold text-sm font-semibold">@thays_tiare</p></article>
+                            <article class="w-[290px] sm:w-[330px] shrink-0 rounded-2xl border border-dark-border bg-dark-card p-6 flex flex-col justify-between min-h-[205px]"><p class="text-gray-200 leading-relaxed text-sm">“La mejor experiencia: llevo dos meses con mis cristales y aún siguen intactos. Servicio recomendable.”</p><p class="mt-6 text-gold text-sm font-semibold">@ksj.catalina</p></article>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-10">
+                    <a href="https://www.instagram.com/p/DFvcGffx9gA/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-gold border-b border-gold/40 pb-1 hover:text-gold-light hover:border-gold transition-colors"><i class="ph ph-instagram-logo text-base"></i> Ver publicación y comentarios en Instagram</a>
                 </div>
             </div>
         </section>
